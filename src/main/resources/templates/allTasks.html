@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>allTasks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .delete-button {
+            background-color: #dc3545;
+            color: #ffffff;
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        hr {
+            margin-top: 30px;
+        }
+
+        .create-task-link {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #28a745;
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Priority</th>
+        <th>Deadline</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="task : ${tasks}">
+        <td><a th:href="@{/{id}(id=${task.getId()})}" th:text="${task.title}"></a></td>
+        <td th:text="${task.description}">description</td>
+        <td th:text="${task.priority}">priority</td>
+        <td th:text="${task.deadline}">deadline</td>
+        <td><a th:href="@{/{id}/delete(id=${task.getId()})}" class="delete-button">Delete</a></td>
+    </tr>
+</table>
+
+<hr>
+
+<a th:href="@{/createTask}" class="create-task-link">Create Task</a>
+</body>
+</html>

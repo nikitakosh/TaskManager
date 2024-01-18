@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>updateTask</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input[type="text"],
+        select,
+        input[type="datetime-local"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        hr {
+            margin: 20px 0;
+            border: 0;
+            height: 1px;
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/{id}/editTask(id=${task.getId()})}" th:object="${task}" th:method="POST">
+    <label for="title">Title</label>
+    <input type="text" th:field="*{title}" id="title" placeholder="Title" required>
+
+    <hr>
+
+    <label for="description">Description</label>
+    <input type="text" th:field="*{description}" id="description" placeholder="Description" required>
+
+    <hr>
+
+    <label for="priority">Priority</label>
+    <select th:field="*{priority}" id="priority">
+        <option th:each="priority : ${T(com.nikitakosh.TaskManager.enums.Priority).values()}"
+                th:value="${priority}" th:text="${priority}"></option>
+    </select>
+
+    <hr>
+
+    <label for="deadline">Deadline:</label>
+    <input type="datetime-local" th:field="*{deadline}" id="deadline" placeholder="Deadline" required>
+
+    <hr>
+
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>
