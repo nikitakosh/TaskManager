@@ -16,9 +16,10 @@ public class TaskController {
     public TaskController(TaskService taskService) {
         this.taskService = taskService;
     }
+
     @GetMapping("/tasks")
-    public String findAll(Model model) {
-        model.addAttribute("tasks", taskService.findAll());
+    public String findAllUserTasksSortByPriority(Model model) {
+        model.addAttribute("tasks", taskService.findAllUserTasksSortByPriority());
         return "allTasks";
     }
 
