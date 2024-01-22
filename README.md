@@ -19,6 +19,16 @@ TaskManager is a web application developed using Spring Boot, designed to manage
 - **Authentication and Authorization**: Spring Security is implemented to secure the application with user authentication and authorization.
 - **Email Verification**: Enhanced security with email verification for user registration.
 
+  ## Pages
+- **Tasks (/tasks)**:
+![image](https://github.com/nikitakosh/TaskManager/assets/113053952/40955c65-96b8-40be-809a-ec0ff0fcb3cc)
+  
+- **Regisatration (/registration)**:
+![image](https://github.com/nikitakosh/TaskManager/assets/113053952/d83574a1-1ec2-4c83-a08e-bb510cb676b5)
+
+- **Task (/{id})**:
+  ![image](https://github.com/nikitakosh/TaskManager/assets/113053952/0f66e790-9bd6-4f69-b0d5-a2e4dbf77661)
+
 ## Prerequisites
 
 - Java Development Kit (JDK)
