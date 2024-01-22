@@ -16,7 +16,7 @@ TaskManager is a web application developed using Spring Boot, designed to manage
 
 - **CRUD Operations**: TaskManager supports basic CRUD operations for managing tasks.
 - **User Registration**: Users can register for an account, ensuring a personalized experience.
-- **Authentication and Authorization**: Spring Security is implemented to secure the application with user authentication and authorization.
+- **Authentication and Authorization**.
 - **Email Verification**: Enhanced security with email verification for user registration.
 
 ## Pages
